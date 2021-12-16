@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   try {
     nonExistentFunction();
   } catch (error) {
-    console.error(error);
+    rollbar.error(error);
   }
 })
 
