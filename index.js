@@ -30,6 +30,10 @@ app.get('/error', (req, res) => {
   }
 })
 
+app.get('/js', (req, res) => {
+  res.sendFile(path.join(__dirname, "/public/index.js"))
+})
+
 app.use(rollbar.errorHandler())
 
 const port = process.env.PORT || 4005
