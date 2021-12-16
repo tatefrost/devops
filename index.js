@@ -22,13 +22,8 @@ app.get('/css', function (req,res) {
 })
 
 app.get('/error', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'))
-  try {
-    nonExistentFunction();
-  } catch (error) {
-    rollbar.error(error);
-  }
-})
+  res.sendFile(path.join(__dirname, '/error'))
+
 
 app.get('/js', (req, res) => {
   res.sendFile(path.join(__dirname, "/public/index.js"))
