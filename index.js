@@ -17,7 +17,12 @@ app.get('/', (req, res) => {
   rollbar.info('html file served successfully')
 })
 
-app.get('/', (req, res) => {
+app.get('/css', function (req,res) {
+  res.sendFile(path.join(__dirname, "/public/styles.css"))
+})
+
+app.get('/error', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/index.html'))
   try {
     nonExistentFunction();
   } catch (error) {
