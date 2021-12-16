@@ -10,3 +10,5 @@ function submit (event) {
         console.log(error)
       })
 }
+
+btn.addEventListener('click', submit)
